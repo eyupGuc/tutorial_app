@@ -7,9 +7,14 @@ const Home = () => {
   const [tutorials, setTutorials] = useState([]);
   const url = "https://axios-example-cw.herokuapp.com/api/tutorials";
   const getTutorials = async () => {
-    const { data } = await axios(url);
+    try{
+      const { data } = await axios(url);
     setTutorials(data);
-    //  console.log(data)
+     console.log(data)
+    }catch(e){
+        console.log(e)
+      
+    }
     //  setTutorials(data) // Burda çağrılırsa render/state sonsuz döngüye giriyor
   };
   // getTutorials() // Eğer state olsa idi sürekli render olurdu.
