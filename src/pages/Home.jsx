@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
       <AddTutorial />
-      <TutorialList tutorials={tutorials} />
+      <TutorialList tutor={tutorials} />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
-import AddTutorial from "./AddTutorial";
+
 
 
 //! Test Data
@@ -17,8 +17,8 @@ import AddTutorial from "./AddTutorial";
 //   },
 // ];
 
-const TutorialList = ({tutorials}) => {
-  console.log(tutorials);
+const TutorialList = ({tutor}) => {
+  console.log(tutor);
  
 
   return (
@@ -35,7 +35,7 @@ const TutorialList = ({tutorials}) => {
           </tr>
         </thead>
         <tbody>
-          {tutorials?.map((item) => {
+          {tutor?.map((item) => {
             const { id, title, description } = item;
             return (
               <tr key={id}>
