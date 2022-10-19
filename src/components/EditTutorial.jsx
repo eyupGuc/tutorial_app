@@ -7,7 +7,7 @@ const EditTutorial = () => {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
-              Modal title
+              Edit Tutorial
             </h1>
             <button
               type="button"
