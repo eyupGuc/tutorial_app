@@ -71,7 +71,7 @@ const TutorialList = ({ tutor, getTutorials }) => {
                     data-bs-toggle="modal"
                     data-bs-target="#edit-Modal"
                     className="me-2 text-warning"
-                    onClick={editTutorial("...")}
+                    onClick={()=>editTutorial({id:"983",title:"yar",description:"tepe"})}
                   />
                   <AiFillDelete
                     size={22}
