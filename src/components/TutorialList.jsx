@@ -16,7 +16,7 @@ import axios from "axios";
 //   },
 // ];
 
-const TutorialList = ({ tutor,getTutorials }) => {
+const TutorialList = ({ tutor, getTutorials }) => {
   // console.log(tutor);
   //! CRUD-DELETE
   const deleteTutorial = async (id) => {
@@ -26,19 +26,21 @@ const TutorialList = ({ tutor,getTutorials }) => {
     } catch (error) {
       console.log(error);
     }
-    getTutorials()
+    getTutorials();
   };
 
-  const editTutorial=async({id,title,description})=>{
+  const editTutorial = async ({ id, title, description }) => {
     // const{id,title,description}=item;
-    //! CRUD-UPDATE-(PUT) 
+    //! CRUD-UPDATE-(PUT)
     //?PUT: WHOLE UPDATE, PATCH:PARTİALLY UPDATE
-    const url="https://axios-example-cw.herokuapp.com/api/tutorials";
-    try{
-await axios.put(`${url}/${id}`,{title,description})
-
-    }catch(e){console.log(e);}
-  }
+    const url = "https://axios-example-cw.herokuapp.com/api/tutorials";
+    try {
+      await axios.put(`${url}/${id}`, { title, description });
+    } catch (e) {
+      console.log(e);
+    }
+    getTutorials();
+  };
 
   return (
     <div className="container mt-4">
@@ -66,13 +68,19 @@ await axios.put(`${url}/${id}`,{title,description})
                     size={20}
                     type="button"
                     className="me-2 text-warning"
-                     onClick={()=>editTutorial(id)}
+                    onClick={() => editTutorial(id)}
                   />
                   <AiFillDelete
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={()=>deleteTutorial(item)}
+                    onClick={() =>
+                      deleteTutorial({
+                        id: "976",
+                        title: "update",
+                        description: "new",
+                      })
+                    }
                   />
                 </td>
               </tr>
