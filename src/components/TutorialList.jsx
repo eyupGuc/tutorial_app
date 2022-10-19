@@ -16,7 +16,7 @@ import axios from "axios";
 //   },
 // ];
 
-const TutorialList = ({ tutor }) => {
+const TutorialList = ({ tutor,getTutorials }) => {
   // console.log(tutor);
   //! CRUD-DELETE
   const deleteTutorial = async (id) => {
@@ -26,6 +26,7 @@ const TutorialList = ({ tutor }) => {
     } catch (error) {
       console.log(error);
     }
+    getTutorials()
   };
 
   return (
