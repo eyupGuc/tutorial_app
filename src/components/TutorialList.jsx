@@ -68,18 +68,18 @@ const TutorialList = ({ tutor, getTutorials }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
-                    onClick={() => editTutorial(id)}
+                    onClick={() => editTutorial({
+                      id: "976",
+                      title: "update",
+                      description: "new",
+                    })}
                   />
                   <AiFillDelete
                     size={22}
                     type="button"
                     className="text-danger "
                     onClick={() =>
-                      deleteTutorial({
-                        id: "976",
-                        title: "update",
-                        description: "new",
-                      })
+                      deleteTutorial(id)
                     }
                   />
                 </td>
