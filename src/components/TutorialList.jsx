@@ -29,6 +29,14 @@ const TutorialList = ({ tutor,getTutorials }) => {
     getTutorials()
   };
 
+  const editTutorial=async(id)=>{
+    const url="https://axios-example-cw.herokuapp.com/api/tutorials";
+    try{
+await axios.put(`${url}/${id}`)
+
+    }catch(e){console.log(e);}
+  }
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -55,6 +63,7 @@ const TutorialList = ({ tutor,getTutorials }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
+                     onClick={()=>editTutorial(id)}
                   />
                   <AiFillDelete
                     size={22}
