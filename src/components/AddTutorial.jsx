@@ -1,10 +1,26 @@
+import axios from "axios";
 import { useState } from "react";
 
 const AddTutorial = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    // const newTutor={"title":title,"description":description}; key ve value aynı ise alttaki ki gibi de olabilir.
+    const newTutor={title,description};
+    addTutorial(newTutor)
+    
+  };
+
+  //! POST - CRUD (Create)
+  const addTutorial=async(newTutor)=>{
+    const url = "https://axios-example-cw.herokuapp.com/api/tutorials";
+    try{
+      await axios.post(url,newTutor)
+    }catch(e){
+console.log(e)
+    }
+  }
 
   return (
     <div className="container text-center mt-4">
