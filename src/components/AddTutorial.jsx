@@ -6,9 +6,12 @@ const AddTutorial = () => {
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault()
     // const newTutor={"title":title,"description":description}; key ve value aynı ise alttaki ki gibi de olabilir.
     const newTutor={title,description};
     addTutorial(newTutor)
+    setTitle("")
+    setDescription("")
     
   };
 
