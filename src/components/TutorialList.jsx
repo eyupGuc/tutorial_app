@@ -29,10 +29,13 @@ const TutorialList = ({ tutor,getTutorials }) => {
     getTutorials()
   };
 
-  const editTutorial=async(id)=>{
+  const editTutorial=async({id,title,description})=>{
+    // const{id,title,description}=item;
+    //! CRUD-UPDATE-(PUT) 
+    //?PUT: WHOLE UPDATE, PATCH:PARTİALLY UPDATE
     const url="https://axios-example-cw.herokuapp.com/api/tutorials";
     try{
-await axios.put(`${url}/${id}`)
+await axios.put(`${url}/${id}`,{title,description})
 
     }catch(e){console.log(e);}
   }
@@ -69,7 +72,7 @@ await axios.put(`${url}/${id}`)
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={()=>deleteTutorial(id)}
+                    onClick={()=>deleteTutorial(item)}
                   />
                 </td>
               </tr>
