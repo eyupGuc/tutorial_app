@@ -1,6 +1,7 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
+import EditTutorial from "./editTutorial";
 
 //! Test Data
 // const tutorials = [
@@ -67,6 +68,8 @@ const TutorialList = ({ tutor, getTutorials }) => {
                   <FaEdit
                     size={20}
                     type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-Modal"
                     className="me-2 text-warning"
                     onClick={() => editTutorial({
                       id: "976",
@@ -88,6 +91,7 @@ const TutorialList = ({ tutor, getTutorials }) => {
           })}
         </tbody>
       </table>
+      <EditTutorial/>
     </div>
   );
 };
